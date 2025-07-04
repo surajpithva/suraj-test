@@ -4,7 +4,7 @@ const PageLayout = ({ children }) => {
   return (
     <>
       <Header />
-      <main className="pt-30 dark:text-white dark:bg-black">{children}</main>
+      <main>{children}</main>
     </>
   );
 };

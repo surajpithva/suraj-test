@@ -1,10 +1,13 @@
 import { Navigate } from "react-router-dom";
+import LoginPage from "./pages/auth/Login";
+import AllProducts from "./pages/products/AllProduct";
+import Cart from "./pages/cart/Cart";
 
 
 export const routes = [
   {
-    path: "/",
-    element: <Login />,
+    path: "/login",
+    element: <LoginPage />,
   },
   {
     path: "/cart",
@@ -16,6 +19,6 @@ export const routes = [
   },
   {
     path: "*",
-    element: <Navigate to="/" replace />,
+    element: <Navigate to="/login" replace />,
   },
 ];
