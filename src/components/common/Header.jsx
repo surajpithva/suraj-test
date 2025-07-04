@@ -18,16 +18,15 @@ const Header = () => {
           <h1 className="text-2xl font-bold">Hashtechy</h1>
 
           <div className="flex items-center gap-6">
+            <button
+              onClick={() => navigate("/cart")}
+              className="text-2xl hover:text-gray-300"
+              aria-label="Go to Cart"
+            >
+              <FiShoppingCart />
+            </button>
             {isLoggedIn && (
               <>
-                <button
-                  onClick={() => navigate("/cart")}
-                  className="text-2xl hover:text-gray-300"
-                  aria-label="Go to Cart"
-                >
-                  <FiShoppingCart />
-                </button>
-
                 <button
                   onClick={logout}
                   className="hover:text-gray-300 text-xl"

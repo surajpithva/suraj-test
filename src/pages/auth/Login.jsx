@@ -6,11 +6,11 @@ import { loginSchema } from "../../validations/auth.validation";
 import { useNavigate } from "react-router-dom";
 import { loginApi } from "../../api/authApi";
 import { useAuth } from "../../context/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const LoginPage = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
-
 
   const {
     register,
@@ -23,7 +23,8 @@ const LoginPage = () => {
   const mutation = useMutation({
     mutationFn: loginApi,
     onSuccess: (res) => {
-      login(res.data); 
+      login(res.data);
+      toast.success("Login Successful!");
     },
     onError: (err) => {
       alert("Login failed!");
